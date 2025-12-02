@@ -1,4 +1,3 @@
-# ejemplos/demo_clientes.py
 
 from tienda_clientes import Cliente, GestorClientes
 
@@ -6,7 +5,6 @@ from tienda_clientes import Cliente, GestorClientes
 def main():
     gestor = GestorClientes()
 
-    # Crear algunos clientes de ejemplo
     cliente1 = Cliente(
         nombre="Juan Pérez",
         email="juan@example.com",
@@ -21,26 +19,26 @@ def main():
         saldo=2000
     )
 
-    # Agregar clientes al gestor
+
     gestor.agregar_cliente(cliente1)
     gestor.agregar_cliente(cliente2)
 
-    # Mostrar todos los clientes
+
     print("=== Todos los clientes ===")
     for c in gestor.listar_todos():
         print(c)
 
-    # Registrar una compra
+
     print("\n=== Registrando compra de $1500 a Juan ===")
     cliente1.registrar_compra(1500)
     print(cliente1)
 
-    # Actualizar dirección de María
+
     print("\n=== Actualizando dirección de María ===")
     cliente2.actualizar_direccion("Av. Libertador 9999")
     print(cliente2)
 
-    # Buscar por email
+
     print("\n=== Buscando cliente por email ===")
     encontrado = gestor.buscar_por_email("maria@example.com")
     if encontrado:
@@ -48,12 +46,12 @@ def main():
     else:
         print("No se encontró el cliente.")
 
-    # Desactivar cliente
+
     print("\n=== Desactivando a Juan ===")
     cliente1.desactivar()
     print(cliente1)
 
-    # Listar solo activos
+
     print("\n=== Clientes activos ===")
     for c in gestor.listar_activos():
         print(c)
